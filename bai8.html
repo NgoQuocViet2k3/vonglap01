@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>Chơi</button>
+<script>
+    let maxTURNS = 3;
+
+    function play() {
+        let min = parseInt(prompt('Nhập giới hạn dưới: '));
+        let max = parseInt(prompt('Nhập giới hạn trên: '));
+        let number = min + (max - min) * Math.random();
+        number = Math.floor(number);
+        turns = 0;
+        let win = false;
+        while (turns < maxTURNS) {
+            turns++;
+            let message = 'Lượt' + turns + '. Nhập số bạn đoán: ';
+
+            if (turns !== 1) {
+                message = 'Đoán sai. \n' + message;
+            }
+            let guess = parseInt(prompt(message));
+            if (guess === number) {
+                win = true;
+                alert('Chúc mừng. \nBạn đã đoán đúng.');
+                break;
+            }
+        }
+        if (!win) {
+            alert('Rất tiếc. \nĐã quá 3 lượt.');
+        }
+    }
+</script>
+</script>
+</body>
+</html>
